@@ -1,15 +1,14 @@
-import { Button } from '@/components/ui/button'
-import { useDemoStore } from '@/store/demo'
+import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 
 export default function Home() {
-  const { demo, increment } = useDemoStore()
+
+  const navigator = useNavigate()
   return (
     <div>
-      <img src='images/demo.jpg' alt='' className='w-12' />
-      <div>{demo.count}</div>
-      <Button onClick={increment} className='text-red-500'>
-        Click me
-      </Button>
+      <Button onClick={() => navigator('/poker')}  className='text-red-500'>
+       Poker(塔罗牌、扑克)
+      </Button> 
     </div>
   )
 }
